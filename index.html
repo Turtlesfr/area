@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79777941-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-79777941-1');
+</script>
+
+	<title>Calculateur de métrés</title>
+	<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<script src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="dist/js/libraries.min.js" canvas="myCanvas"></script>
+<script type="text/paperscript" src="dist/js/scripts.min.js" canvas="myCanvas"></script>
+</head>
+<body style="height:100%;width:100%;font-family: 'Open Sans', sans-serif;">
+	<a href="https://www.donga.fr" title="Donga.fr - Retour au site" class="back-home-btn btn-shape"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;Retour sur Donga.fr</a>
+<div id="modal_container">
+	<div class="modal_content">
+		<a href="" class="btn-close-modal"><i class="fa fa-remove"></i></a>
+		<form id="form-new-size">
+			<input type="text" id="new_size_input" class="textfield-input" />
+			<input type="submit" id="length-change" value="OK" class="button-black"/>
+		</form>
+	</div>
+</div>
+<div id="modal_container_pdf">
+	<div class="modal_pdf_pagination">
+		<a href="" class="btn-close-modal-plan"><i class="fa fa-remove"></i></a>
+		<p>Choisissez la page à importer</p>
+		<ul>
+		</ul>
+	</div>
+</div>
+<div id="container">
+	<div id="top-menu">
+		<div id="box-plan">
+			<div class="step-no-plan">
+				<p>Ajoutez un plan pour dessiner par dessus</p>
+				<label for="imageLoader" class="label-file button-black btn-shape">Choisir un fichier (pdf, jpg, gif, png)</label>
+				<input type="file" class="input-file btn-shape" id="imageLoader" />
+			</div>
+			<div class="step-setup-plan">
+				<input type='button' class='delete-image button-black btn-shape' value='Supprimer le plan'>
+				<input type='button' id='accept-image' class='button-black btn-shape' value='Valider'>
+			</div>
+			<div class="step-plan-is-setup">
+				<input type='button' class='delete-image button-black btn-shape' value='Supprimer le plan'>
+				<input type='button' id='modify-image' class='button-black btn-shape' value='Modifier le plan'>
+			</div>
+		</div>
+		<div id="box-mesures">
+			<div class="echelle-elements">
+				<p>Déplacez l'échelle dans la zone de dessin et changez sa longueur ici (en cm)</p>
+				<form id="form-change-echelle">
+					<input type="text" id="ratio-input" value=1 />
+					<input type="submit" id="ratio-change" value="Modifier l'échelle" class="button-black btn-shape"/>
+				</form>
+			</div>
+		</div>
+		<div id="box-surfaces">
+			<p class="one">Cliquez sur un point en maintenant SHIFT enfoncé pour le supprimer</p>
+			<p class="two" style="display:none;color:'#dedede;'">Double-cliquez sur les cotes de vos surfaces pour modifier leur valeur</p>
+			<div id="surface-list">
+
+			</div>
+			<a href="" class="add-surface button-black btn-shape">Ajouter une surface</a>
+			<p class="surface-totale" style="display: none;">Surface totale : <span></span>m²</p>
+		</div>
+		<div id="box-download">
+			<a href="" id='download-canvas' class='button-blue btn-shape'>Télécharger (png)</a>
+		</div>
+	</div>
+</div>
+<canvas id="canvas-plan" width="500" height="500"></canvas>
+<canvas id="myCanvas" resize></canvas>
+<canvas id="canvas_pdf"></canvas>
+<canvas id="canvas-top-infos"></canvas>
+<canvas id='temp-canvas' width="500" height="400">
+</body>
+</html>
